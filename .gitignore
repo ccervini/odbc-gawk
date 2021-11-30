@@ -52,7 +52,6 @@ dkms.conf
 *_saved
 
 # misc.;
-.deps/
 *.json
 *.py
 
