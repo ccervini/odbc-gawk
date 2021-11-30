@@ -25,10 +25,10 @@ It relies on the ODBC Driver Manager and ODBC drivers for each data source to be
 
 #### As a non-root user, run the commands below:
 ```
-mkdir gawk-5.1.0
-cd gawk-5.1.0
+mkdir odbc-gawk
+cd odbc-gawk
 git clone https://github.com/ccervini/odbc-gawk.git
-cd extension
+cd gawk-5.1.0/extension
 make && cd .libs && gcc -o odbc.so --shared odbc.o /usr/lib/x86_64-linux-gnu/libodbc.so && cd ../.. && rm gawk && make
 ```
 
