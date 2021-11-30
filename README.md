@@ -48,7 +48,7 @@ cd extension
 
 ## Author
 
-ex. Cesare Cervini, cesare.cervini at dbi-services.com
+Cesare Cervini, cesare.cervini at dbi-services.com
 
 ## Version History
 
