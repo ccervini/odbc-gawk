@@ -23,12 +23,18 @@ It relies on the ODBC Driver Manager and ODBC drivers for each data source to be
 * apt-get install libodbc1
 * apt install unixodbc
 
-#### As a non-root user, run the commands below:
+#### As a non-root user, e.g. user debian with home dir /home/debian, run the commands below:
 ```
-mkdir odbc-gawk
-cd odbc-gawk
+mkdir ~/odbc-gawk
+cd ~/odbc-gawk
 git clone https://github.com/ccervini/odbc-gawk.git
 cd gawk-5.1.0/extension
+
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/odbc:/home/debian/instantclient_21_3:$LD_LIBRARY_PATH
+export PATH=/opt/mssql-tools/bin:$PATH
+export NLS_LANG=american_america.UTF8
+export AWKLIBPATH=/home/debian/odbc4gawk/odbc-gawk/gawk-5.1.0/extension/.libs
+
 make && cd .libs && gcc -o odbc.so --shared odbc.o /usr/lib/x86_64-linux-gnu/libodbc.so && cd ../.. && rm gawk && make
 ```
 
